@@ -1,0 +1,30 @@
+---
+import { cn } from "@/_utils/tailwind.utils";
+import { cva } from "class-variance-authority";
+
+interface Props {
+	className?: string;
+	orientation?: "horizontal" | "vertical";
+}
+
+const { orientation = "vertical", className = "" } = Astro.props;
+
+const divider = cva("bg-black", {
+	variants: {
+		orientation: {
+			horizontal: ["w-full h-[2px]"],
+			vertical: ["w-[2px] h-full"],
+		},
+	},
+	defaultVariants: {
+		orientation: orientation,
+	},
+});
+---
+
+<div
+	class={cn(divider(), className)}
+	aria-orientation={orientation}
+	role="separator"
+>
+</div>

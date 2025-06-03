@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+
+:root {
+    --background: #EEECE1;
+}
+
+
+@theme inline {
+    --color-background: var(--background);
+}
+
+body {
+    font-family: 'calibri', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI';
+}

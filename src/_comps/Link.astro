@@ -1,0 +1,17 @@
+---
+import { cn } from "@/_utils/tailwind.utils";
+import { cva } from "class-variance-authority";
+
+interface Props {
+    className?: string;
+    href: string;
+}
+
+const { className = "", href } = Astro.props;
+
+const link = cva(["text-xs text-blue-700 underline"]);
+---
+
+<a class={cn(link(), className)} href={href} target="_blank">
+    <slot />
+</a>

@@ -1,11 +1,232 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Divider from "@/_comps/divider.astro";
+import H1 from "@/_comps/H1.astro";
+import H2 from "@/_comps/H2.astro";
+import Link from "@/_comps/Link.astro";
+import List from "@/_comps/List.astro";
+import ListItem from "@/_comps/ListItem.astro";
+import Parah from "@/_comps/Parah.astro";
+import Layout from "@/_layouts/Layout.astro";
+import { cn } from "@/_utils/tailwind.utils";
 ---
 
 <Layout>
-	<Welcome />
+	<main
+		id="print-area"
+		class={cn(["w-[595px] h-[842px] bg-white", "flex flex-col p-8"])}
+	>
+		<div class={cn(["flex flex-col h-full p-4", "border border-black/80"])}>
+			<div
+				class={cn([
+					"grid grid-cols-[0.65fr_auto_0.45fr] pb-4",
+					"border-b-2 border-dashed",
+				])}
+			>
+				<div class="flex flex-col justify-center">
+					<H1>Jayaprakash</H1>
+					<Parah>
+						Full-stack developer ( 4+ years ), Chennai, India.
+					</Parah>
+					<Parah>
+						Specialized in: <b>Nextjs</b>,
+						<b>React</b>, <b>NodeJs</b>,
+						<b>MongoDB</b>.
+					</Parah>
+				</div>
+				<Divider />
+				<div class="flex flex-col justify-center text-end">
+					<Parah>
+						Phone: <Link href="tel:+918502766117">
+							+91 85027 66117
+						</Link>
+					</Parah>
+					<Parah>
+						Email: <Link href="mailto:prakash03.yes@gmail.com">
+							prakash03.yes@gmail.com
+						</Link>
+					</Parah>
+					<Parah>
+						LinkedIn: <Link
+							href="https://www.linkedin.com/in/prakash03yes/"
+						>
+							linkedin.com/in/prakash03yes
+						</Link>
+					</Parah>
+					<Parah>
+						Portfolio: <Link href="https://prakash03yes.github.io/">
+							prakash03yes.github.io
+						</Link>
+					</Parah>
+				</div>
+			</div>
+
+			<div class="flex flex-col w-full mt-4">
+				<H2>Experience</H2>
+				<div class="grid grid-cols-[0.2fr_auto_0.8fr] py-2">
+					<Parah className="px-1">2021 - 2025</Parah>
+					<Divider />
+					<div class="flex flex-col gap-1.5 px-2">
+						<Parah>
+							<b>Lead developer in Yes Or Yes ( 4+ years )</b>
+							<br />
+						</Parah>
+
+						<List>
+							<ListItem>
+								Started as intern, now leading team.
+							</ListItem>
+							<ListItem>
+								Good at managing projects from start to finish.
+							</ListItem>
+						</List>
+
+						<Parah> My day to day be like:</Parah>
+
+						<List>
+							<ListItem>
+								Understanding what client wants and making plan
+								(Solution Providing skills)
+							</ListItem>
+
+							<ListItem>
+								Telling how much time project will take
+							</ListItem>
+							<ListItem>
+								Working with design people and SEO people
+							</ListItem>
+							<ListItem>
+								Managing developers in my team
+							</ListItem>
+							<ListItem>
+								Making technical decisions for projects
+							</ListItem>
+							<ListItem>
+								Making sure project gets completed properly
+							</ListItem>
+							<ListItem>
+								Taking care of project after it's done
+							</ListItem>
+						</List>
+					</div>
+				</div>
+			</div>
+
+			<div class="flex flex-col w-ful">
+				<H2>Skills</H2>
+				<div class="grid grid-cols-[0.2fr_auto_0.8fr] pt-2">
+					<Parah className="px-1"> Frontend </Parah>
+					<Divider />
+					<div class="flex flex-col gap-2 px-2">
+						<Parah>
+							Nextjs, React, Astro, Tailwind, Typescript, Gsap,
+							Motion
+						</Parah>
+					</div>
+				</div>
+				<div class="grid grid-cols-[0.2fr_auto_0.8fr]">
+					<Parah className="px-1 pt-2">Backend</Parah>
+					<Divider />
+					<div class="flex flex-col gap-2 px-2 pt-2">
+						<Parah> NodeJs, Honojs, Redis, Nginx </Parah>
+					</div>
+				</div>
+				<div class="grid grid-cols-[0.2fr_auto_0.8fr]">
+					<Parah className="pt-2 px-1">Databases</Parah>
+					<Divider />
+					<div class="flex flex-col gap-2 px-2 pt-2">
+						<Parah> MongoDB, Postgres, GraphDB ( Learning ) </Parah>
+					</div>
+				</div>
+				<div class="grid grid-cols-[0.2fr_auto_0.8fr] pb-2">
+					<Parah className="px-1 pt-2">Cloud</Parah>
+					<Divider />
+					<div class="flex flex-col gap-2 px-2 pt-2">
+						<Parah>Google Cloud, AWS ( basics )</Parah>
+					</div>
+				</div>
+			</div>
+
+			<div class="flex flex-col w-ful">
+				<H2>Projects</H2>
+				<div class="grid grid-cols-[0.2fr_auto_0.8fr] pt-2">
+					<Parah />
+					<Divider />
+					<div class="flex flex-col gap-1.5 px-2">
+						<Parah>
+							<b> Sportkingfashion ( Ecommerce ) </b>
+							<Link href="https://sportkingfashion.com/">
+								take a look
+							</Link>
+						</Parah>
+						<List>
+							<ListItem>
+								Standard ecommerce with Razorpay payment,
+								Unicommerce sycning, Bulk upload, Inventory
+								syncing and custom auth features.
+							</ListItem>
+							<ListItem>
+								Developed from scratch with Clean architecture.
+							</ListItem>
+							<ListItem>
+								CI/CD with Gitlab actions for seamless
+								automation.
+							</ListItem>
+							<ListItem>
+								Built with Nextjs, Honojs, MongoDB, Redis,
+								Mailchimp, Razorpay.
+							</ListItem>
+						</List>
+					</div>
+				</div>
+				<div class="grid grid-cols-[0.2fr_auto_0.8fr] pb-2">
+					<Parah className="pt-2" />
+					<Divider />
+					<div class="flex flex-col gap-1.5 px-2 pt-2">
+						<Parah>
+							<b> Reffery ( Hybrid mobile app ) </b>
+							<Link href="https://reffery.com/">
+								take a look
+							</Link>
+						</Parah>
+						<List>
+							<ListItem>
+								Mobile app for bussiness people, Developed from
+								scratch and published to Appstore and Playstore.
+							</ListItem>
+							<ListItem>
+								Got Mountain Mover award for delivering.
+							</ListItem>
+
+							<ListItem>
+								Built with Ionic, Capacitor, React, Firebase.
+							</ListItem>
+						</List>
+					</div>
+				</div>
+			</div>
+
+			<div class="flex flex-col w-ful">
+				<H2>Others</H2>
+				<div class="grid grid-cols-[0.2fr_auto_0.8fr] pt-2">
+					<Parah className="px-1">Goal</Parah>
+					<Divider />
+					<div class="flex flex-col gap-1.5 px-2">
+						<Parah>
+							Wanna become <b>Software Architect</b>
+						</Parah>
+					</div>
+				</div>
+				<div class="grid grid-cols-[0.2fr_auto_0.8fr]">
+					<Parah className="pt-2 px-1">Hobbies</Parah>
+					<Divider />
+					<div class="flex flex-col gap-1.5 px-2 pt-2">
+						<Parah>
+							Learning to play Guitar ( flamenco ), Playing Clash
+							royle ( game )
+						</Parah>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
 </Layout>

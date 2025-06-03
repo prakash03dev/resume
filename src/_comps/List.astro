@@ -1,0 +1,16 @@
+---
+import { cn } from "@/_utils/tailwind.utils";
+import { cva } from "class-variance-authority";
+
+interface Props {
+    className?: string;
+}
+
+const { className = "" } = Astro.props;
+
+const list = cva(["list-disc list-outside pl-2.5"]);
+---
+
+<ul class={cn(list(), className)}>
+    <slot />
+</ul>
