@@ -8,7 +8,7 @@ interface Props {
 
 const { className = "" } = Astro.props;
 
-const h2 = cva(["font-bold text-xs bg-background px-1 rounded"]);
+const h2 = cva(["font-bold text-xs bg-background px-1 align-middle"]);
 ---
 
 <p class={cn(h2(), className)}>
